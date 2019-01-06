@@ -78,7 +78,7 @@ public int nthRare (int[] elements, int n) {
     new Comparator<Map.Entry<Integer, Integer>>() {
         @Override
         public int compare(Entry<Integer, Integer> e1, Entry<Integer, Integer> e2) {
-            return e1.getValue() - e2.getValue();
+            return e2.getValue() - e1.getValue();
         }
     });
     
