@@ -66,7 +66,7 @@ public int nthRare (int[] elements, int n) {
     Map<Integer, Integer> map = new HashMap<>() ;
     for(int i = 0; i < elements.length; i++){
         int curr = elements[i];
-        if(!map.containsKey(curr) {
+        if(!map.containsKey(curr)) {
             map.put(curr, 1);
         } else {
             map.put(curr, map.get(curr) + 1);
