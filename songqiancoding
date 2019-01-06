@@ -23,13 +23,14 @@ public List<String> changeDateFormats(List<String> dates) {
     //YYYY/MM/DD,  DD/MM/YYYY, MM-DD-YYYY
     StringBuilder sb = new StringBuilder();
     for(String str : dates) {
-        if(str.charAt(5) == '/') {
+        if(str.charAt(4) == '/') {
             for(int i = 0; i < str.length(); i++) {
                 char c = str.charAt(i);
                 if( c != '/') sb.append(str.charAt(i);
             }
         
         }
+        if(str.charAt(
     
     
     }
