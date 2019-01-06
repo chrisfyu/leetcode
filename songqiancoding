@@ -74,7 +74,7 @@ public int nthRare (int[] elements, int n) {
     }
     
    PriorityQueue<Map.Entry<Integer,Integer>> pq = new PriorityQueue<Map.Entry<Integer,Integer>>(
-    map.size(),
+    map.size() - n,
     new Comparator<Map.Entry<Integer, Integer>>() {
         @Override
         public int compare(Entry<Integer, Integer> e1, Entry<Integer, Integer> e2) {
@@ -84,7 +84,7 @@ public int nthRare (int[] elements, int n) {
     
     for(Map.Entry<Integer, Integer> myEntry : map.entrySet()) {
         while (pq.size() <= map.size() - n) {
-            if(pq.size() == n && pq.poll().getValue() > myEntry.getValue()) {
+            if(pq.size() == n && pq.poll().getValue() < myEntry.getValue()) {
                 pq.poll();
                 pq.offer(myEntry);
             } 
