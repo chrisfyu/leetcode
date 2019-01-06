@@ -1,7 +1,7 @@
 
 public static String uniqueString(String[] names) {
     if (names == null || names.length() == 0 ) return "";
-    Map<String, Integer> counts = new LinkedHashMap<>(); 
+    Map<String, Integer> counts = new HashMap<>(); 
     for (String str : names) { 
         counts.put(str, counts.containsKey(str) ? counts.get(str) + 1 : 1);
     } 
