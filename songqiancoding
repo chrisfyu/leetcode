@@ -31,6 +31,7 @@ public List<String> changeDateFormats(List<String> dates) {
             res.add(sb.toString());
         }
         if(str.charAt(2) == '/') {
+            sb = new StringBuilder();
             for(int i = str.length() - 1; i >= 0; i--) {
                 char c = str.charAt(i);
                 if(c != '/') sb.append(c);
@@ -38,6 +39,7 @@ public List<String> changeDateFormats(List<String> dates) {
             res.add(sb.toString());
         }
         if(str.charAt(2) == '-') {
+            sb = new StringBuilder();
             for(int i = str.length() - 1; i > 5; i--) {
                 char c = str.charAt(i);
                 sb.append(c);
@@ -55,6 +57,7 @@ public List<String> changeDateFormats(List<String> dates) {
     }
     return res;
 
-
-
 }
+
+
+
