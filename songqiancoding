@@ -83,7 +83,7 @@ public int nthRare (int[] elements, int n) {
     });
     
     for(Map.Entry<Integer, Integer> myEntry : map.entrySet()) {
-        while (pq.size() <= n) {
+        while (pq.size() <= map.size() - n) {
             if(pq.size() == n && pq.poll().getValue() > myEntry.getValue()) {
                 pq.poll();
                 pq.offer(myEntry);
