@@ -1,4 +1,6 @@
 
+//find first unique name
+
 public static String uniqueString(String[] names) {
     if (names == null || names.length() == 0 ) return "";
     Map<String, Integer> counts = new HashMap<>(); 
