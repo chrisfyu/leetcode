@@ -73,13 +73,21 @@ public int nthRare (int[] elements, int n) {
         }
     }
     
-    PriorityQueue<Integer> pq = new PriorityQueue<>();
+   PriorityQueue<Map.Entry<Integer,Integer>> pq = new PriorityQueue<Map.Entry<Integer,Integer>>(
+    map.size(),
+    new Comparator<Map.Entry<Integer, Integer>>() {
+        @Override
+        public int compare(Entry<Integer, Integer> e1, Entry<Integer, Integer> e2) {
+            return e1.getValue() - e2.getValue();
+        }
+    });
     
-    for(Integer val : map.values()) {
+    for(Map.Entry<Integer, Integer> myEntry : map.entrySet()) {
         while (pq.size() <= n) {
-            pq.offer(val);
+            pq.offer(myEntry);
         }
     }
-    return pq.poll();
+    
+    return pq.poll().getValue();
 }
 
