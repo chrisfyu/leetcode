@@ -95,3 +95,17 @@ public int nthRare (int[] elements, int n) {
     return pq.poll().getValue();
 }
 
+//4
+    public static Collection<Integer> getIdsByMessage(String xml, String message) throws Exception {
+        Collection<Integer> list = new ArrayList<>();
+    	String[] lines = xml.split("[\\r\\n]+");
+    	for (int i = 0; i < lines.length; i++){
+//    		String line = lines[i].split
+    				if (lines[i].contains(message)){
+    					String[] words = lines[i-1].split("\"") ;
+    					int id = Integer.parseInt(words[1]);
+    					list.add(id);
+    				}
+    	}
+		return list;
+    }
